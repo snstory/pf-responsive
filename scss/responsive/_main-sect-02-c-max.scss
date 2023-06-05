@@ -1,0 +1,31 @@
+.main-sect-02-c {
+   font-size: 0.6rem;
+   > h2 {
+      padding-bottom: 0.5rem;
+      font-size: 0.8rem;
+   }
+   > .tab-menu {
+      gap: 0.25rem;
+      top: -0.15rem;
+      right: 0.25rem;
+      > button {
+         width: 1.5rem;
+         height: 1.5rem;
+         padding: 0.3rem 0.5rem;
+         font-size: 0.7rem;
+      }
+   }
+   > ul {
+      height: calc(100% - (0.5rem + 1rem));
+      padding: 0;
+      > li {
+         border-radius: 1.5rem;
+         > a {
+            > h3 {
+               font-size: 1rem;
+               padding-bottom: 0.5rem;
+            }
+         }
+      }
+   }
+}

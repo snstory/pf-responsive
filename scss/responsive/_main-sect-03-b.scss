@@ -1,0 +1,50 @@
+.main-sect-03-b {
+   display: grid;
+   grid-template-columns: auto;
+   gap: 0.5rem;
+   @include layer-abs-middle;
+   @include layout-def-padding;
+   > section {
+      &:nth-child(2) {
+         background: linear-gradient(135deg, var(--orange-3) 60%, var(--orange-4));
+      }
+      &:last-child {
+         display: none;
+         background: linear-gradient(135deg, var(--green-1) 60%, var(--green-2) 90%);
+      }
+      padding: 1rem 1.5rem;
+      box-sizing: border-box;
+      border-radius: 1.25rem;
+      background: linear-gradient(135deg, var(--blue-4) 60%, var(--blue-5) 90%);
+      font-size: 0.7rem;
+      font-family: "NanumSquareRound";
+      line-height: 150%;
+      color: var(--main-bg);
+      > h2 {
+         font-size: 0.8rem;
+         color: var(--main-bg);
+      }
+      > ul {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 0.5rem;
+         padding: 1rem 0 0.5rem;
+         > li {
+            letter-spacing: -0.05rem;
+            > a {
+               display: block;
+               position: relative;
+               padding-left: 0.6rem;
+               &::before {
+                  display: block;
+                  content: "ㆍ";
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+               }
+               color: var(--main-bg);
+            }
+         }
+      }
+   }
+}

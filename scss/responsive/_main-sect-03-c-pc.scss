@@ -1,0 +1,28 @@
+.main-sect-03-c {
+   > section {
+      &:nth-of-type(4) {
+         // 국민연금 ON AIR
+         // background: var(--pink-1) url(#{$img-path-1}bg_02.png) no-repeat right 0.25rem bottom 0.25rem / 80% auto;
+         background-size: 60% auto;
+      }
+      &:nth-of-type(7) {
+         // 웹진 ‘내 곁에 국민연금’
+         > div {
+            > button {
+               @include common-sect-2($t-indent: 2rem);
+            }
+         }
+      }
+      &:nth-of-type(8) {
+         // 뉴스레터
+         > h3 {
+            width: 100%;
+         }
+         > div {
+            > button {
+               @include common-sect-2(var(--blue-6), 2rem);
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,99 @@
+.main-sect-02-c {
+   position: relative;
+   margin-top: 1rem;
+   font-size: 0.6rem;
+   line-height: 1rem;
+   > h2 {
+      padding-bottom: 0.5rem;
+      font-size: 0.8rem;
+      text-indent: 0.5rem;
+      color: var(--black-6);
+      letter-spacing: -0.1rem;
+   }
+   > .tab-menu {
+      display: flex;
+      gap: 0.05rem;
+      position: absolute;
+      top: -0.15rem;
+      right: 0;
+      > button {
+         &.on {
+            width: auto;
+            height: auto;
+            text-indent: 0;
+         }
+         display: block;
+         width: 1.5rem;
+         height: 1.5rem;
+         text-indent: -499.95rem;
+         padding: 0.3rem 0.5rem;
+         border-radius: 1.5rem;
+         font-size: 0.7rem;
+         font-weight: normal;
+         letter-spacing: -0.05rem;
+         font-family: "NanumSquareRound";
+         color: var(--main-bg);
+
+         $colors: (rgb(95, 123, 218), rgb(37, 184, 69), rgb(224, 44, 38), rgb(190, 105, 55));
+         @each $bg in $colors {
+            $i: index(
+               $list: $colors,
+               $value: $bg,
+            );
+            &:nth-child(#{$i}) {
+               background-color: $bg;
+            }
+         }
+      }
+   }
+   > ul {
+      position: relative;
+      min-height: 5rem;
+      > li {
+         &:first-child {
+            display: block;
+         }
+         display: none;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         box-sizing: border-box;
+         border-radius: 1.5rem;
+         background-color: rgb(95, 123, 218);
+         overflow: hidden;
+
+         $colors: (rgb(95, 123, 218), rgb(37, 184, 69), rgb(224, 44, 38), rgb(190, 105, 55));
+         @each $bg in $colors {
+            $i: index(
+               $list: $colors,
+               $value: $bg,
+            );
+            &:nth-child(#{$i}) > a {
+               background-color: $bg;
+            }
+         }
+         > a {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 0 1.5rem;
+            letter-spacing: -0.05rem;
+            > h3 {
+               font-size: 1rem;
+               padding-bottom: 0.5rem;
+               color: var(--main-bg);
+            }
+            > p {
+               line-height: 130%;
+               color: var(--main-bg);
+            }
+         }
+      }
+   }
+}

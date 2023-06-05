@@ -1,0 +1,73 @@
+:root {
+   --main-bg: #ffffff;
+
+   --black-1: #555555;
+   --black-2: #777777;
+   --black-3: rgba(51, 51, 51, 0.37);
+   --black-4: #333333;
+   --black-5: #d3d3d3;
+   --black-6: #2b2b2b;
+   --black-7: #f6f6f6;
+   --black-8: #6a6a6a;
+   --black-9: #ccc;
+   --black-10a: rgba(0, 0, 0, 0.08);
+   --black-11: #888;
+
+   --blue-1: #425abe;
+   --blue-2: #5199dd;
+   --blue-3: #c8e2fa;
+   --blue-4: #3f87cb;
+   --blue-5: #79b7f1;
+   --blue-6: #787eb4;
+   --blue-7: #d3efee;
+   --blue-8: #287dcc;
+   --blue-9: #eef5fc;
+
+   --green-1: #2a9f4a;
+   --green-2: #64cd81;
+   --green-3: #13a538;
+   --green-4: #13927e;
+
+   --orange-1: #c0842a;
+   --orange-2: #d4520c;
+   --orange-3: #cd693f;
+   --orange-4: #f29770;
+   --orange-5: #fce3ce;
+
+   --pink-1: #fff9f5;
+   --pink-1a: #fff9f5ab;
+
+   --red-1: #eb647d;
+
+   --white-1: #f5f5f5;
+   --white-2: #e0e0e0;
+   --white-3: #e8e8e8;
+   --white-3a: rgba(232, 232, 232, 0.233);
+   --white-4: #dedede;
+   --white-5: #f9f9f9;
+   --white-6a: rgba(249, 249, 249, 0.548);
+   --white-7: #ecf6ff;
+
+   --yellow-1: rgba(233, 255, 212, 0.966);
+}
+
+$img-path-1: unquote("../image/");
+
+$mx-width: 61rem;
+$def-side-padding: 0 0.75rem;
+
+$ball-pos1: 6.3rem;
+$ball-pos2: 4.75rem;
+
+$fam-NSR: "NanumSquareRound";
+
+$mobile-wh: 375px;
+$tablet-wh: 768px;
+$pc-wh: 1024px;
+$max-wh: 1080px;
+$quick-show-wh: 1510px;
+
+$bg-st-01: rgba(226, 146, 159, 0.979);
+$bg-st-02: rgba(25, 148, 25, 0.979);
+$bg-st-03: rgba(31, 31, 192, 0.979);
+$bg-st-04: rgba(192, 21, 21, 0.979);

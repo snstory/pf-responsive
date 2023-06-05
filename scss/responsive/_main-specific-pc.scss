@@ -1,0 +1,150 @@
+.main-specific {
+   display: flex;
+   justify-content: space-between;
+   gap: 1rem;
+   padding-top: 1.5rem;
+   > section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 11.2rem;
+      box-sizing: border-box;
+      border-radius: 1rem;
+      background-color: var(--blue-7);
+      font-size: 0.8rem;
+      letter-spacing: -0.05rem;
+      > h2 {
+         // padding-bottom: 0.5rem;
+         font-size: 1.2rem;
+         color: var(--green-4);
+         text-indent: 0;
+      }
+      > ul {
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         gap: 0;
+         padding: 1rem;
+         font-weight: 400;
+         word-break: keep-all;
+         > li {
+            display: flex;
+            width: calc(100% / 8);
+            height: 100%;
+            padding: 0 0.5rem;
+            > a {
+               display: flex;
+               align-items: center;
+               width: auto;
+               height: 100%;
+               padding: 0.2rem 0.5rem;
+               border-radius: 1rem;
+               background-color: var(--main-bg);
+               color: var(--green-4);
+               text-align: center;
+               line-height: 150%;
+               cursor: pointer;
+               &:hover {
+                  animation: bg-overlay 900ms;
+                  animation-fill-mode: forwards;
+               }
+            }
+         }
+      }
+      &:first-child {
+         position: relative;
+         z-index: 3;
+         width: 80%;
+         &::before {
+            $whg: 4.5rem;
+            @include ball-layer($whg, 5.75rem, null, 0, 50%, null, 2, var(--main-bg));
+            transform: translate(50%, -50%);
+         }
+      }
+      &:last-child {
+         z-index: 4;
+         width: 20%;
+         background-color: var(--orange-5);
+         cursor: pointer;
+         &::before {
+            $whg: 4.5rem;
+            @include ball-layer($whg, $whg, 0, null, 50%, null, 2, var(--orange-5));
+            transform: translate(-50%, -50%);
+         }
+         &::after {
+            @include d-specific("←", -15%, null, var(--orange-2));
+         }
+         > h2 {
+            position: relative;
+            z-index: 3;
+            color: var(--orange-2);
+            text-align: center;
+            text-indent: 0;
+         }
+         > ul {
+            display: none;
+         }
+      }
+   }
+
+   &.on {
+      > section:first-child {
+         z-index: 4;
+         width: 20%;
+         background-color: var(--blue-7);
+         cursor: pointer;
+         &::before {
+            $whg: 4.5rem;
+            @include ball-layer($whg, $whg, null, 0, 50%, null, 2, var(--blue-7));
+            transform: translate(50%, -50%);
+         }
+         &::after {
+            @include d-specific("→", null, -15%);
+         }
+         > h2 {
+            position: relative;
+            z-index: 3;
+            color: var(--green-4);
+            text-align: center;
+            text-indent: 0;
+         }
+         > ul {
+            display: none;
+         }
+      }
+      > section:last-child {
+         align-items: center;
+         position: relative;
+         z-index: 3;
+         width: 80%;
+         cursor: initial;
+         &::before {
+            $whg: 4.5rem;
+            @include ball-layer($whg, 5.75rem, 0, null, 50%, null, 2, var(--main-bg));
+            transform: translate(-50%, -50%);
+         }
+         &::after {
+            display: none;
+         }
+         > h2 {
+            text-align: center;
+            text-indent: 0;
+         }
+         > ul {
+            display: flex;
+            justify-content: flex-end;
+            > li {
+               > a {
+                  color: var(--orange-2);
+                  &:hover {
+                     animation: bg-overlay-2 900ms;
+                     animation-fill-mode: forwards;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

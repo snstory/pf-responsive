@@ -1,0 +1,211 @@
+@mixin layer-abs-middle($mxwh: null, $nWh: null) {
+   $mxwh: if($mxwh == null, $mx-width, $mxwh);
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+   @if ($nWh == null) {
+      max-width: $mxwh;
+   } @else {
+      width: $mxwh;
+   }
+}
+
+@mixin common-font-style($color: null) {
+   font-size: 0.8rem;
+   font-family: "NanumSquareRound";
+   font-weight: normal;
+   color: if($color==null, var(--black-1), $color);
+}
+
+@mixin common-box-style-1 {
+   height: auto;
+   border: 0.05rem solid var(--white-3);
+   border-top: 0;
+   border-bottom-left-radius: 0.5rem;
+   border-bottom-right-radius: 0.5rem;
+}
+
+@mixin common-btns-1 {
+   display: block;
+   content: "";
+   width: 1.15rem;
+   height: 1.15rem;
+   border-radius: 100%;
+   background: var(--main-bg) url(#{$img-path-1}icon_slider.svg) no-repeat center / 100% auto;
+}
+
+@mixin common-reset-1 {
+   position: initial;
+   left: initial;
+   right: initial;
+   top: initial;
+   display: initial;
+   width: initial;
+   height: initial;
+   margin: initial;
+}
+
+@mixin common-sect-1($pddg: 1rem 1rem) {
+   padding: $pddg;
+   border: 0.05rem solid var(--black-5);
+   border-radius: 1rem;
+   box-sizing: border-box;
+   background: var(--main-bg);
+   font-size: 0.7rem;
+   font-family: "NanumSquareRound";
+   line-height: normal;
+   letter-spacing: -0.05rem;
+}
+
+@mixin common-sect-2($btn-color: null, $t-indent: 1.8rem) {
+   $btn-color: if($btn-color==null, var(--red-1), $btn-color);
+
+   display: block;
+   width: 100%;
+   padding: 0.5rem 0;
+   border-radius: 1.25rem;
+   background: $btn-color url(#{$img-path-1}icon_eye_w.svg) no-repeat left 0.5rem center/1rem auto;
+   font-weight: 600;
+   color: var(--main-bg);
+   text-align: left;
+   text-indent: $t-indent;
+   letter-spacing: -0.1rem;
+}
+
+@mixin icon-maker(
+   $LR: null,
+   $icons: null,
+   $flip: null,
+   $wh: 1.3rem,
+   $hg: 1.3rem,
+   $icon-depth: 2,
+   $LR_gap: 0.25rem,
+   $p-flex: null
+) {
+   $icon-info: if($icons==null, null, $img-path-1 + unquote($icons));
+
+   @if ($p-flex==null) {
+      position: absolute;
+      @if ($LR==null) {
+         right: 0;
+      } @else if($LR== "L") {
+         left: 0;
+      } @else if($LR== "LPD") {
+         left: $LR_gap;
+      } @else if($LR== "RPD") {
+         right: $LR_gap;
+      }
+      top: if($flip==0, 0, 50%);
+   }
+
+   @if ($flip==null) {
+      transform: translateY(-50%);
+   } @else if($flip==0) {
+      transform: null;
+   } @else {
+      transform: rotate(180deg) translateY(50%);
+   }
+
+   display: block;
+   content: "";
+   width: $wh;
+   height: $hg;
+   @if not($icon-info == null) {
+      background: url($icon-info) no-repeat center / 100% auto;
+   }
+}
+
+@mixin common-make-bar($dir: null) {
+   display: block;
+   content: "";
+   position: absolute;
+   width: if($dir==null, 0.7rem, 0.05rem);
+   height: if($dir==null, 0.05rem, 0.7rem);
+   background-color: var(--black-2);
+   @if ($dir==null) {
+      left: 25%;
+      top: 50%;
+   } @else {
+      left: 50%;
+      top: 25%;
+   }
+   @content;
+}
+
+@mixin make-all-guard($color: rgba(0, 0, 0, 0.3), $pos: absolute, $top: 0) {
+   display: block;
+   content: "";
+   position: $pos;
+   left: 0;
+   right: 0;
+   top: $top;
+   bottom: 0;
+   z-index: 10;
+   background-color: $color;
+}
+
+@mixin round-button($bg-color: null) {
+   background: if($bg-color==null, var(--main-bg), $bg-color);
+   padding: 0.2rem 0.5rem;
+   font-size: 0.35rem;
+   border-radius: 0.5rem;
+}
+
+@mixin push-icon-array($cm-char: "icon_sb_a_0", $stnum: 1, $ednum: 9) {
+   $cm-char: unquote(
+      $string: $cm-char,
+   );
+   @for $i from $stnum through $ednum {
+      &:nth-child(#{$i}) {
+         > a::before {
+            background-image: url("#{$img-path-1}#{$cm-char}#{$i}.svg");
+         }
+      }
+   }
+}
+
+@mixin layout-def-padding($def-pddg: null) {
+   $def-pddg: if($def-pddg==null, $def-side-padding, $def-pddg);
+
+   padding: $def-pddg;
+}
+
+@mixin ball-layer($wh: null, $hg: null, $lt: null, $rt: null, $tp: null, $btm: null, $zdx: 1, $bg-clr: null) {
+   display: block;
+   content: "";
+   position: absolute;
+   left: $lt;
+   right: $rt;
+   top: $tp;
+   bottom: $btm;
+   z-index: $zdx;
+   width: $wh;
+   height: $hg;
+   border-radius: 100%;
+   background-color: if($bg-clr==null, #64cd81, $bg-clr);
+}
+
+@mixin elem-hide($s-reset: null) {
+   overflow: if($s-reset==1, initial, hidden);
+   display: if($s-reset==1, initial, block);
+   position: if($s-reset==1, initial, absolute);
+   border: if($s-reset==1, initial, 0);
+   width: if($s-reset==1, initial, 0.05rem);
+   height: if($s-reset==1, initial, 0.05rem);
+   clip: if($s-reset==1, initial, rect(0.05rem, 0.05rem, 0.05rem, 0.05rem));
+}
+
+@mixin d-specific($ct: "→", $lt: null, $rt: null, $color: var(--green-4)) {
+   content: $ct;
+   left: $lt;
+   right: $rt;
+   color: $color;
+
+   display: block;
+   position: absolute;
+   top: 50%;
+   z-index: 3;
+   transform: translateY(-50%);
+   font-size: 1.5rem;
+   font-weight: bold;
+}

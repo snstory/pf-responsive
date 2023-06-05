@@ -1,0 +1,176 @@
+.main-sect-03-c {
+   @include layer-abs-middle;
+   @include layout-def-padding;
+
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-auto-flow: row dense;
+   gap: 0.5rem;
+   padding-top: 1rem;
+
+   > section {
+      @include common-sect-1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      text-align: center;
+      word-break: keep-all;
+      line-height: 150%;
+
+      @for $i from 1 through 3 {
+         &:nth-of-type(#{$i}) {
+            display: block;
+            @if ($i==2) {
+               @include elem-hide;
+            }
+            text-align: initial;
+            > h3 {
+               @include elem-hide;
+            }
+
+            > a {
+               display: block;
+               position: relative;
+               padding-right: 0.5rem;
+               font-size: 0.75rem;
+               font-weight: 600;
+               color: var(--black-8);
+               &::after {
+                  display: block;
+                  content: "";
+                  position: absolute;
+                  right: -0.1rem;
+                  top: 50%;
+                  transform: rotate(45deg) translateY(-50%);
+                  width: 0.5rem;
+                  height: 0.5rem;
+                  border: 0.1rem solid var(--black-8);
+                  border-left: 0;
+                  border-bottom: 0;
+               }
+            }
+         }
+      }
+
+      &:nth-of-type(4) {
+         // 국민연금 ON AIR
+         @include elem-hide;
+      }
+
+      &:nth-of-type(5) {
+         // 영상으로 보는 국민연금
+         grid-row: 2 / 3;
+         grid-column: 1 / 3;
+         > a {
+            display: block;
+            width: 100%;
+            > span {
+               display: block;
+               width: auto;
+               height: 8rem;
+               margin-bottom: 0.5rem;
+               border-radius: 1rem;
+               background: url(#{$img-path-1}bg_01.jpg) no-repeat center / cover;
+               text-indent: -499.95rem;
+            }
+         }
+      }
+
+      &:nth-of-type(6) {
+         // 카드뉴스
+         grid-row: 3 / 4;
+         grid-column: 1 / 3;
+         > a {
+            display: block;
+            width: 100%;
+            > span {
+               display: flex;
+               flex-wrap: wrap;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               gap: 0.25rem;
+               width: auto;
+               height: 5rem;
+               margin-bottom: 0.5rem;
+               border-radius: 1rem;
+               border: 0.35rem solid var(--blue-1);
+               background-color: var(--blue-4);
+               color: var(--main-bg);
+               > b {
+                  font-size: 1.3rem;
+               }
+            }
+         }
+      }
+
+      &:nth-of-type(7) {
+         // 웹진 ‘내 곁에 국민연금’
+         > h3 {
+            width: 100%;
+            text-align: center;
+         }
+         > p {
+            font-size: 0.6rem;
+            line-height: 140%;
+         }
+         > div {
+            width: 100%;
+            > button {
+               &:first-child {
+                  margin-bottom: 0.25rem;
+               }
+               @include common-sect-2;
+            }
+         }
+      }
+      &:nth-of-type(8) {
+         // 뉴스레터
+         > h3 {
+            width: 100%;
+            text-align: center;
+         }
+         > p {
+            font-size: 0.6rem;
+            line-height: 140%;
+         }
+         > div {
+            width: 100%;
+            > button {
+               &:first-child {
+                  margin-bottom: 0.25rem;
+               }
+               @include common-sect-2(var(--blue-6));
+            }
+         }
+      }
+
+      &:nth-of-type(9) {
+         // 내 곁에 국민연금 APP 다운로드
+         grid-row: 5;
+         grid-column: 1 / 3;
+         > ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1rem;
+            > li {
+               width: 100%;
+               > a {
+                  display: block;
+                  padding: 0.5rem 0;
+                  > img {
+                     width: auto;
+                     height: auto;
+                     border: 1rem solid var(--black-7);
+                     border-radius: 1rem;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

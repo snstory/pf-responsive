@@ -1,0 +1,130 @@
+.footer-inner {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(5rem, 1fr));
+   grid-auto-rows: minmax(1rem, auto);
+   grid-auto-flow: row;
+   gap: 1rem;
+   row-gap: 1rem;
+   align-items: center;
+   > section {
+      padding: 0;
+      font-size: 0.8rem;
+
+      &:nth-of-type(1) {
+         //* 국민연금 고객센터
+         grid-column: 1 / 3;
+         grid-row: 1 / 2;
+
+         display: grid;
+         grid-template-columns: 1.5fr 2fr;
+         grid-auto-rows: 1.4rem;
+         align-items: center;
+         > h3 {
+            grid-column: 1;
+            grid-row: 1;
+         }
+         > dl {
+            padding: 0 0 0 0.2rem;
+            &:first-of-type {
+               padding-top: 0;
+            }
+            &:nth-of-type(1) {
+               //* 국번없이
+               grid-column: 2;
+               grid-row: 1;
+            }
+            &:nth-of-type(2) {
+               //* 해외
+               grid-column: 2;
+               grid-row: 2;
+            }
+            &:nth-of-type(3) {
+               //* 평일
+               grid-column: 2;
+               grid-row: 3;
+            }
+         }
+      }
+
+      &:nth-of-type(2) {
+         //* 전화 외 제공되는 서비스
+         grid-column: 3 / 4;
+         grid-row: 1;
+         > ul {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.15rem;
+            > li {
+               > a {
+                  gap: 0.5rem;
+                  letter-spacing: -0.05rem;
+               }
+            }
+         }
+      }
+
+      &:nth-of-type(3) {
+         //* 정보처리 관련목록
+         grid-column: 1 / 3;
+         grid-row: 2;
+         > ul {
+            background-color: var(--white-5);
+         }
+      }
+
+      &:nth-of-type(4) {
+         //* 국민연금 소셜미디어등 정보
+         grid-column: 3;
+         grid-row: 2;
+      }
+
+      &:nth-of-type(5) {
+         //* 국민연금공단 주소
+         grid-column: 1 / span 3;
+         grid-row: 5;
+      }
+
+      &:nth-of-type(6) {
+         //* 중요 공지사항
+         grid-column: 1 / span 3;
+         grid-row: 4;
+      }
+
+      &:nth-of-type(7) {
+         //* copyright
+         grid-column: 2;
+         grid-row: 6;
+         text-align: center;
+      }
+
+      &:nth-of-type(8) {
+         //* 관련기관으로 이동하기
+         grid-column: 1 / span 2;
+         grid-row: 3;
+
+         display: grid;
+         grid-template-columns: repeat(2, minmax(5rem, 1fr));
+         gap: 1.5rem;
+         > div {
+            &:nth-of-type(1) {
+               display: inherit;
+            }
+            grid-template-columns: 4fr 1fr;
+         }
+      }
+
+      &:nth-of-type(9) {
+         //* 사이트 인증마크
+         grid-column: 3;
+         grid-row: 3;
+         > ul {
+            > li {
+               > :first-child {
+                  width: 2.25rem;
+                  height: 2.25rem;
+               }
+            }
+         }
+      }
+   }
+}

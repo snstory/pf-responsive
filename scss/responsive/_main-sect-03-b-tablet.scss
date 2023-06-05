@@ -1,0 +1,54 @@
+.main-sect-03-b {
+   grid-template-columns: repeat(3, minmax(5rem, 1fr));
+   gap: 1.5rem;
+   > section {
+      &:nth-child(1) {
+         order: 2;
+         position: relative;
+         z-index: 2;
+         &::before {
+            @include ball-layer(5rem, 5rem, 0, null, null, $ball-pos2, 2, var(--white-1));
+            transform: translate(-70%, 50%);
+         }
+         &::after {
+            @include ball-layer(5rem, 5rem, null, 0, $ball-pos1, null, 2, var(--white-1));
+            transform: translate(70%, -50%);
+         }
+      }
+      &:nth-child(2) {
+         order: 3;
+         position: relative;
+         z-index: 3;
+         &::after {
+            @include ball-layer(4.3rem, 4.3rem, 0, null, $ball-pos1, null, 2, var(--orange-3));
+            transform: translate(-50%, -50%);
+         }
+      }
+      &:last-child {
+         order: 1;
+         display: block;
+         position: relative;
+         z-index: 3;
+         &::after {
+            @include ball-layer(4.3rem, 4.3rem, null, 0, null, $ball-pos2, 2);
+            transform: translate(50%, 50%);
+         }
+      }
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      line-height: 150%;
+      > h2 {
+         font-size: 1.1rem;
+         text-align: center;
+         letter-spacing: -0.05rem;
+      }
+      > ul {
+         display: grid;
+         grid-template-columns: auto;
+         padding: 1rem 0 0.5rem 1.8rem;
+         > li {
+            letter-spacing: -0.05rem;
+         }
+      }
+   }
+}

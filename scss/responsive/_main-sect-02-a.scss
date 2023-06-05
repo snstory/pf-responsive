@@ -1,0 +1,92 @@
+.main-sect-02 {
+   font-size: 0.65rem;
+   padding: 1rem 0 0;
+   .main-sect-02-a-wrap {
+      position: relative;
+      padding: 2rem 0 0;
+      border-radius: 0.5rem;
+      background-color: var(--white-6a);
+      > section {
+         > h2 {
+            position: absolute;
+            top: 0;
+            width: 3rem;
+            font-size: 0.7rem;
+            color: var(--black-6);
+            text-align: center;
+            cursor: pointer;
+            &:hover,
+            &.on {
+               text-decoration: underline;
+            }
+         }
+         @for $i from 1 through 4 {
+            &:nth-child(#{$i}) > h2 {
+               left: calc(3.2rem * #{$i - 1});
+            }
+         }
+         &:first-child > div {
+            display: block;
+         }
+         > div {
+            display: none;
+            > ul {
+               > li {
+                  > a {
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     gap: 0.25rem;
+                     &:hover {
+                        > p,
+                        > span {
+                           color: var(--orange-2);
+                        }
+                     }
+                     > p {
+                        position: relative;
+                        width: 72%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-indent: 0.5rem;
+                        &::before {
+                           display: block;
+                           content: "ㆍ";
+                           position: absolute;
+                           left: -0.6rem;
+                        }
+                     }
+                     > span {
+                        width: 28%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: right;
+                     }
+                  }
+               }
+            }
+            > div.ctrls {
+               > a:first-child,
+               > a:nth-child(2) {
+                  display: none;
+               }
+               > a:last-child {
+                  display: block;
+                  position: absolute;
+                  right: 0;
+                  top: 0.2rem;
+                  width: 1.1rem;
+                  height: 1.1rem;
+                  box-sizing: border-box;
+                  border: 0.05rem solid var(--black-2);
+                  border-radius: 100%;
+                  text-indent: -499.95rem;
+                  background: var(--black-5) url(#{$img-path-1}icon_more.svg) no-repeat center / 0.5rem auto;
+               }
+            }
+         }
+      }
+   }
+}

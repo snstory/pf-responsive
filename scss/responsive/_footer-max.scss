@@ -1,0 +1,49 @@
+.footer-inner {
+   > section {
+      &:nth-of-type(1) {
+         //* 국민연금 고객센터
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         gap: 0.75rem;
+         > h3 {
+            gap: 0.25rem;
+         }
+         > dl {
+            gap: 0.25rem;
+         }
+      }
+
+      &:nth-of-type(2) {
+         //* 전화 외 제공되는 서비스
+         > ul {
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 1rem;
+         }
+      }
+
+      &:nth-of-type(4) {
+         //* 국민연금 소셜미디어등 정보
+         > ul {
+            justify-content: flex-end;
+            gap: 0.75rem;
+         }
+      }
+
+      &:nth-of-type(7) {
+         //* copyright
+         grid-column: 3;
+         grid-row: 5;
+         text-align: right;
+      }
+
+      &:nth-of-type(9) {
+         //* 사이트 인증마크
+         > ul {
+            justify-content: flex-end;
+            gap: 1rem;
+         }
+      }
+   }
+}

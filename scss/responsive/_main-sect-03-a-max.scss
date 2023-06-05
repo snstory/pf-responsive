@@ -1,0 +1,17 @@
+.main-sect-03-a {
+   > section {
+      > ul {
+         row-gap: 1.5rem;
+         padding: 1.75rem 0.25rem;
+         font-size: 0.8rem;
+         > li {
+            > a {
+               &::before {
+                  @include layer-abs-middle(3rem, 1);
+                  height: 3rem;
+               }
+            }
+         }
+      }
+   }
+}

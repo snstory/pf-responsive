@@ -1,0 +1,97 @@
+.aside-right-wrapper {
+   @include layer-abs-middle;
+   display: block;
+   position: absolute;
+   right: 0;
+   top: 0;
+   z-index: 100;
+   width: 100%;
+   height: 0 !important;
+   overflow: visible;
+   visibility: hidden;
+   > div {
+      $gap-size: 1rem;
+      position: absolute;
+      right: calc(-6.25rem - $gap-size);
+      // right: 1rem;
+      top: 0;
+      height: auto;
+      > .aside-right {
+         position: sticky;
+         left: 0;
+         top: 9rem;
+         z-index: 100;
+         width: 6.25rem;
+         padding: 0.85rem 0.75rem;
+         box-sizing: border-box;
+         border: 0.05rem solid var(--white-3);
+         border-radius: 1rem;
+         background-color: var(--main-bg);
+         box-shadow: 0 0.2rem 0.5rem var(--black-10a);
+         font-size: 0.65rem;
+         font-family: "NanumSquareRound";
+         letter-spacing: -0.05rem;
+         > h2 {
+            background-color: var(--white-7);
+            color: var(--blue-8);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+         }
+         > ul {
+            padding-top: 0.5rem;
+            overflow: hidden;
+            > li {
+               &:not(:first-child) {
+                  border-top: 0.05rem solid var(--black-5);
+               }
+               > a {
+                  display: block;
+                  padding: 0.3rem 0;
+                  text-align: center;
+                  word-break: keep-all;
+                  &:hover {
+                     background-color: var(--blue-9);
+                     color: var(--blue-8);
+                  }
+               }
+            }
+            &.reduction {
+               animation: flexble-ctrl-re 500ms;
+               animation-fill-mode: forwards;
+            }
+            &.enlargement {
+               animation: flexble-ctrl-en 500ms;
+               animation-fill-mode: forwards;
+            }
+         }
+         > button:first-of-type {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.25rem;
+            margin-top: 0.5rem;
+            background-color: var(--black-11);
+            color: var(--main-bg);
+            border-radius: 0.7rem;
+         }
+         > button:last-of-type {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -2.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            background: var(--black-6) url(#{$img-path-1}icon_top.svg) no-repeat center / 1.2rem auto;
+            text-indent: -499.95rem;
+         }
+      }
+   }
+}

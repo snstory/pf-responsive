@@ -1,0 +1,45 @@
+@keyframes bg-overlay {
+   0% {
+      background-color: var(--main-bg);
+      color: var(--green-4);
+   }
+   25% {
+      color: var(--main-bg);
+   }
+   100% {
+      background-color: var(--green-4);
+      color: var(--main-bg);
+   }
+}
+
+@keyframes bg-overlay-2 {
+   0% {
+      background-color: var(--main-bg);
+      color: var(--orange-2);
+   }
+   25% {
+      color: var(--main-bg);
+   }
+   100% {
+      background-color: var(--orange-2);
+      color: var(--main-bg);
+   }
+}
+
+@keyframes flexble-ctrl-en {
+   from {
+      height: 146px;
+   }
+   to {
+      height: 415px;
+   }
+}
+
+@keyframes flexble-ctrl-re {
+   from {
+      height: 415px;
+   }
+   to {
+      height: 146px;
+   }
+}

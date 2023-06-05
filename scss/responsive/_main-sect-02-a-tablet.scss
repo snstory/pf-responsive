@@ -1,0 +1,31 @@
+.main-sect-02 {
+   font-size: 0.7rem;
+   .main-sect-02-a-wrap {
+      > section {
+         > h2 {
+            width: 3.5rem;
+            font-size: 0.8rem;
+         }
+         @for $i from 1 through 4 {
+            &:nth-child(#{$i}) > h2 {
+               left: calc(4rem * #{$i - 1});
+            }
+         }
+         > div {
+            > ul {
+               > li {
+                  > a {
+                     gap: 0.5rem;
+                     > p {
+                        width: 77%;
+                     }
+                     > span {
+                        width: 23%;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

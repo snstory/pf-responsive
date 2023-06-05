@@ -1,0 +1,100 @@
+.main-sect-02-b {
+   position: relative;
+   padding-top: 1rem;
+   font-size: 0.6rem;
+   line-height: 1rem;
+   > h2 {
+      padding-bottom: 0.5rem;
+      font-size: 0.8rem;
+      text-indent: 0.5rem;
+      color: var(--black-6);
+   }
+   > div.swiper-popup {
+      width: auto;
+      height: 7rem;
+      overflow: hidden;
+      > ul {
+         height: 100%;
+         > li {
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 1.5rem;
+            background-color: rgb(211, 121, 211);
+            overflow: hidden;
+
+            $colors: (
+               rgb(211, 121, 211),
+               rgb(130, 170, 223),
+               rgb(105, 211, 206),
+               rgb(43, 65, 136),
+               rgb(58, 146, 180),
+               rgb(123, 141, 18),
+               rgb(49, 155, 54),
+               rgb(155, 67, 155),
+               rgb(56, 91, 138),
+               rgb(61, 134, 131),
+               rgb(46, 62, 112),
+               rgb(23, 101, 133),
+               rgb(99, 112, 23),
+               rgb(23, 117, 27)
+            );
+            @each $bg in $colors {
+               $i: index(
+                  $list: $colors,
+                  $value: $bg,
+               );
+               &.item-#{$i} {
+                  background-color: $bg;
+               }
+            }
+            > a {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: flex-start;
+               height: 100%;
+               padding: 0 1.5rem;
+               letter-spacing: -0.05rem;
+               > h3 {
+                  font-size: 1rem;
+                  padding-bottom: 0.5rem;
+                  color: var(--main-bg);
+               }
+               > p {
+                  line-height: 130%;
+                  color: var(--main-bg);
+               }
+            }
+         }
+      }
+   }
+   > div.btns-ctrl {
+      position: absolute;
+      top: 2.7rem;
+      right: 0.5rem;
+      z-index: 1;
+      width: 3rem;
+      > span {
+         display: block;
+         position: absolute;
+         left: 0.25rem;
+         top: 0;
+         border-radius: 100%;
+         background: var(--main-bg);
+      }
+
+      > span.swiper-prev {
+         &::after {
+            @include common-btns-1;
+         }
+      }
+      > span.swiper-next {
+         left: initial;
+         right: 0.25rem;
+         &::after {
+            @include common-btns-1;
+            transform: rotate(180deg);
+         }
+      }
+   }
+}

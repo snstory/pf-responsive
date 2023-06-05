@@ -1,0 +1,33 @@
+@function f-imgset($tp: null, $src, $pos: null, $size: null, $rept: null, $color: null) {
+   $src: unquote(
+      $string: $src,
+   );
+   $pos: if($pos==null, left top, $pos);
+   $size: if($size==null, contain, $size);
+   $rept: if($rept==null, no-repeat, $rept);
+
+   @if ($tp == "LT") {
+      @return $color url($img-path + $src) $rept left top / $size;
+   } @else if($tp == "RT") {
+      @return $color url($img-path + $src) $rept right top / $size;
+   } @else if($tp == "CT") {
+      @return $color url($img-path + $src) $rept center top / $size;
+   } @else if ($tp == "LB") {
+      @return $color url($img-path + $src) $rept left bottom / $size;
+   } @else if($tp == "RB") {
+      @return $color url($img-path + $src) $rept right bottom / $size;
+   } @else if($tp == "CB") {
+      @return $color url($img-path + $src) $rept center bottom / $size;
+   } @else if($tp == "CL") {
+      @return $color url($img-path + $src) $rept center left / $size;
+   } @else if($tp == "CR") {
+      @return $color url($img-path + $src) $rept center right / $size;
+   } @else if($tp == "C") {
+      @return $color url($img-path + $src) $rept center / $size;
+   } @else if($tp == 1) {
+      @return $color url($img-path + $src) $rept $pos / $size;
+   } @else {
+      // 0
+      @return $color url($src) $rept $pos / $size;
+   }
+}

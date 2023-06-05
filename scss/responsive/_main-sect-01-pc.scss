@@ -1,0 +1,17 @@
+.main-sect-01 {
+   > section:first-child {
+      .btns-wrap {
+         display: none;
+      }
+   }
+
+   > section:last-child {
+      ul {
+         li {
+            &:hover {
+               background-color: var(--yellow-1);
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,117 @@
+.main-sect-01 {
+   font-size: 0.65rem;
+   font-family: "NanumSquareRound";
+   line-height: initial;
+   @include layout-def-padding;
+
+   > section:first-child {
+      position: relative;
+      padding-bottom: 1rem;
+      ul {
+         li {
+            position: relative;
+            height: 6.05rem;
+            padding: 0.7rem 1rem;
+            background: $bg-st-01;
+            box-sizing: border-box;
+            border-radius: 1rem;
+
+            $backgroundColors: ($bg-st-02, $bg-st-03, $bg-st-04);
+            @each $bgs in $backgroundColors {
+               $i: index(
+                  $list: $backgroundColors,
+                  $value: $bgs,
+               );
+               &.item-#{$i + 1} {
+                  background: $bgs;
+               }
+            }
+
+            h2 {
+               width: 70%;
+               font-size: 0.75rem;
+               color: var(--main-bg);
+               letter-spacing: -0.05rem;
+            }
+            p {
+               padding: 0.3rem 0;
+               font-size: 0.35rem;
+               color: var(--main-bg);
+            }
+            a {
+               position: absolute;
+               right: 0.5rem;
+               bottom: 0.35rem;
+               letter-spacing: -0.05rem;
+               @include round-button;
+            }
+         }
+      }
+      .btns-wrap {
+         position: absolute;
+         right: 0.5rem;
+         top: 0.5rem;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 2.75rem;
+         height: auto;
+
+         .swiper-button-prev {
+            @include common-reset-1;
+            &::after {
+               @include common-btns-1;
+            }
+         }
+         .swiper-button-next {
+            @include common-reset-1;
+            &::after {
+               @include common-btns-1;
+               transform: rotate(180deg);
+            }
+         }
+      }
+      .swiper-pagination {
+         bottom: 0;
+         .swiper-pagination-bullet-active {
+            background-color: var(--main-bg);
+         }
+      }
+   }
+
+   > section:last-child {
+      padding: 1rem 0 0;
+      h2 {
+         padding-bottom: 0.5rem;
+         font-size: 0.8rem;
+      }
+      ul {
+         display: grid;
+         grid-template-columns: repeat(3, minmax(2.5rem, 1fr));
+         grid-template-rows: repeat(2, minmax(4.2rem, 1fr));
+         gap: 0.25rem;
+         li {
+            position: relative;
+            border: 0.05rem solid var(--black-5);
+            border-radius: 0.5rem;
+            background-color: var(--main-bg);
+            font-size: 0.65rem;
+            font-weight: bold;
+            > a {
+               position: relative;
+               display: block;
+               width: auto;
+               height: calc(100% - 0.5rem);
+               z-index: 1;
+               padding: 0.5rem 0 0 0.5rem;
+               overflow: hidden;
+            }
+            > span {
+               position: absolute;
+               right: 0.25rem;
+               bottom: 0.25rem;
+            }
+         }
+      }
+   }
+}

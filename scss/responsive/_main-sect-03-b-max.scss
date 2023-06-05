@@ -1,0 +1,17 @@
+.main-sect-03-b {
+   > section {
+      font-size: 1rem;
+      > h2 {
+         padding-top: 1rem;
+         padding-bottom: 0.3rem;
+         font-size: 1.4rem;
+      }
+      > ul {
+         > li {
+            > a {
+               padding-left: 1rem;
+            }
+         }
+      }
+   }
+}
