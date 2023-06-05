@@ -1,6 +1,6 @@
 ; (function ($) {
    $.snstory = {
-      imgPath: '../image/',
+      imgPath: './image/',
    };
 
    $.fn.multiMenuProc = function (opt) {

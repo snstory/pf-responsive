@@ -64,6 +64,9 @@
       }
       .swiper-pagination {
          bottom: 0.5rem;
+         .swiper-pagination-bullet-active {
+            background-color: var(--main-bg);
+         }
       }
    }
 

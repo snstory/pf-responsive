@@ -558,9 +558,6 @@ legend,
 .main-sect-01 > section:first-child .swiper-pagination {
   bottom: 0;
 }
-.main-sect-01 > section:first-child .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--main-bg);
-}
 .main-sect-01 > section:last-child {
   padding: 1rem 0 0;
 }
@@ -2781,6 +2778,9 @@ footer > .footer-wrap {
   }
   .main-sect-01 > section:first-child .swiper-pagination {
     bottom: 0.5rem;
+  }
+  .main-sect-01 > section:first-child .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--main-bg);
   }
   .main-sect-01 > section:last-child {
     width: 40%;
