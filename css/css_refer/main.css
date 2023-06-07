@@ -363,7 +363,7 @@ legend,
   overflow-y: auto;
 }
 .wr-gnb > ul {
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 }
 .wr-gnb > ul > li > h2 {
   position: relative;
