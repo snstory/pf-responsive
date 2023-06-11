@@ -31,11 +31,11 @@
                _th.opt.opener1_no = -1;
                _th.opt.opener2_no = -1;
                _th.executeAct();
-               $('body').css({ overflow: 'visible' });
+               $('body').css('overflow-y', 'visible');
                _th.css({ overflow: 'hidden' });
                _btn.css('backgroundImage', `url(${$.snstory.imgPath}icon_ham_01.svg)`);
             } else {
-               $('body').css({ overflow: 'hidden' });
+               $('body').css('overflow-y', 'hidden');
                _th.css({ overflowY: 'auto' });
                _btn.css('backgroundImage', `url(${$.snstory.imgPath}icon_ham_01_close.svg)`);
             }
@@ -250,8 +250,6 @@
          hideCount: 3,
          hideGap: 5
       }, opt || {});
-
-      console.log(this.opt.hideCount);
 
       if (this.opt.bowlLayer === null) return false;
       if (this.opt.bowlflexble === null) return false;
